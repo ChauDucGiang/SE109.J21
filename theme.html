@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>WeatherGuide | </title>
+    <meta name="description" content=" | ">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="all"
+        href="https://livedemo00.template-help.com/wordpress_50114/wp-content/themes/theme50114/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" media="all"
+        href="https://livedemo00.template-help.com/wordpress_50114/wp-content/themes/theme50114/bootstrap/css/responsive.css">
+
+    <link rel="stylesheet" id="awesome-weather-css"
+        href="https://livedemo00.template-help.com/wordpress_50114/wp-content/plugins/awesome-weather/awesome-weather.css?ver=4.5.15"
+        type="text/css" media="all">
+    <style id="awesome-weather-inline-css" type="text/css">
+        .awesome-weather-wrap {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 14px;
+        }
+    </style>
+    <link rel="stylesheet" id="cherry-parallax-css"
+        href="https://livedemo00.template-help.com/wordpress_50114/wp-content/plugins/cherry-parallax/css/parallax.css?ver=1.0"
+        type="text/css" media="all">
+
+    <link rel="stylesheet" id="theme50114-css"
+        href="https://livedemo00.template-help.com/wordpress_50114/wp-content/themes/theme50114/main-style.css"
+        type="text/css" media="all">
+    <script>
+        var system_folder = 'https://livedemo00.template-help.com/wordpress_50114/wp-content/themes/CherryFramework/admin/data_management/',
+            CHILD_URL = 'https://livedemo00.template-help.com/wordpress_50114/wp-content/themes/theme50114',
+            PARENT_URL = 'https://livedemo00.template-help.com/wordpress_50114/wp-content/themes/CherryFramework',
+            CURRENT_THEME = 'theme50114'</script>
+    <style type="text/css">
+        body {
+            background-color: #ffffff
+        }
+
+        .header {
+            background-color: #323232
+        }
+    </style>
+    <style type="text/css">
+        h1 {
+            font: normal 36px/41px Open Sans;
+            color: #3c3c3c;
+        }
+
+        h2 {
+            font: normal 32px/36px Open Sans;
+            color: #3c3c3c;
+        }
+
+        h3 {
+            font: normal 28px/36px Open Sans;
+            color: #3c3c3c;
+        }
+
+        h4 {
+            font: normal 24px/27px Open Sans;
+            color: #3c3c3c;
+        }
+
+        h5 {
+            font: normal 20px/25px Open Sans;
+            color: #3c3c3c;
+        }
+
+        h6 {
+            font: normal 16px/18px Open Sans;
+            color: #3c3c3c;
+        }
+
+        body {
+            font-weight: normal;
+        }
+
+        .logo_h__txt,
+        .logo_link {
+            font: normal 30px/40px Open Sans;
+            color: #ffffff;
+        }
+
+        .sf-menu>li>a {
+            font: normal 18px/24px Open Sans;
+            color: #ffffff;
+        }
+
+        .nav.footer-nav a {
+            font: normal 18px/24px Open Sans;
+            color: #0d0d0d;
+        }
+    </style>
+    <link rel="stylesheet"
+        href="data:text/css;charset=utf-8;base64,Y2xvdWRmbGFyZS1hcHBbYXBwLWlkPSJhLWJldHRlci1icm93c2VyIl0gewogIGRpc3BsYXk6IGJsb2NrOwogIGJhY2tncm91bmQ6ICM0NTQ4NGQ7CiAgY29sb3I6ICNmZmY7CiAgbGluZS1oZWlnaHQ6IDEuNDU7CiAgcG9zaXRpb246IGZpeGVkOwogIHotaW5kZXg6IDkwMDAwMDAwOwogIHRvcDogMDsKICBsZWZ0OiAwOwogIHJpZ2h0OiAwOwogIHBhZGRpbmc6IC41ZW0gMWVtOwogIHRleHQtYWxpZ246IGNlbnRlcjsKICAtd2Via2l0LXVzZXItc2VsZWN0OiBub25lOwogICAgIC1tb3otdXNlci1zZWxlY3Q6IG5vbmU7CiAgICAgIC1tcy11c2VyLXNlbGVjdDogbm9uZTsKICAgICAgICAgIHVzZXItc2VsZWN0OiBub25lOwp9CgpjbG91ZGZsYXJlLWFwcFthcHAtaWQ9ImEtYmV0dGVyLWJyb3dzZXIiXVtkYXRhLXZpc2liaWxpdHk9ImhpZGRlbiJdIHsKICBkaXNwbGF5OiBub25lOwp9CgpjbG91ZGZsYXJlLWFwcFthcHAtaWQ9ImEtYmV0dGVyLWJyb3dzZXIiXSBjbG91ZGZsYXJlLWFwcC1tZXNzYWdlIHsKICBkaXNwbGF5OiBibG9jazsKfQoKY2xvdWRmbGFyZS1hcHBbYXBwLWlkPSJhLWJldHRlci1icm93c2VyIl0gYSB7CiAgdGV4dC1kZWNvcmF0aW9uOiB1bmRlcmxpbmU7CiAgY29sb3I6ICNlYmViZjQ7Cn0KCmNsb3VkZmxhcmUtYXBwW2FwcC1pZD0iYS1iZXR0ZXItYnJvd3NlciJdIGE6aG92ZXIsCmNsb3VkZmxhcmUtYXBwW2FwcC1pZD0iYS1iZXR0ZXItYnJvd3NlciJdIGE6YWN0aXZlIHsKICBjb2xvcjogI2RiZGJlYjsKfQoKY2xvdWRmbGFyZS1hcHBbYXBwLWlkPSJhLWJldHRlci1icm93c2VyIl0gY2xvdWRmbGFyZS1hcHAtY2xvc2UgewogIGRpc3BsYXk6IGJsb2NrOwogIGN1cnNvcjogcG9pbnRlcjsKICBmb250LXNpemU6IDEuNWVtOwogIHBvc2l0aW9uOiBhYnNvbHV0ZTsKICByaWdodDogLjRlbTsKICB0b3A6IC4zNWVtOwogIGhlaWdodDogMWVtOwogIHdpZHRoOiAxZW07CiAgbGluZS1oZWlnaHQ6IDE7Cn0KCmNsb3VkZmxhcmUtYXBwW2FwcC1pZD0iYS1iZXR0ZXItYnJvd3NlciJdIGNsb3VkZmxhcmUtYXBwLWNsb3NlOmFjdGl2ZSB7CiAgLXdlYmtpdC10cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMXB4KTsKICAgICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgxcHgpOwp9CgpjbG91ZGZsYXJlLWFwcFthcHAtaWQ9ImEtYmV0dGVyLWJyb3dzZXIiXSBjbG91ZGZsYXJlLWFwcC1jbG9zZTpob3ZlciB7CiAgb3BhY2l0eTogLjllbTsKICBjb2xvcjogI2ZmZjsKfQo=">
+</head>
+
+<body class="home page page-id-203 page-template page-template-page-home page-template-page-home-php">
+    <div id="motopress-main" class="main-holder">
+        <!--Begin #motopress-main-->
+
+        <div class="motopress-wrapper content-holder clearfix">
+            <div class="container">
+                <div class="row">
+                    <div class="span12" data-motopress-wrapper-file="page-home.php"
+                        data-motopress-wrapper-type="content">
+                        <div class="row">
+                            <div class="span8 home-content" data-motopress-type="loop"
+                                data-motopress-loop-file="loop/loop-page.php">
+                                <div id="post-203" class="page post-203 type-page status-publish hentry">
+                                    <div class="row ">
+                                        <div class="span12 ">
+                                            <section class="parallax-box home-paralax">
+                                                <div class="parallax-content">
+                                                    <div class="row ">
+                                                        <div class="span8 ">
+                                                            <section class="lazy-load-box effect-slidefromleft"
+                                                                data-delay="0" data-speed="600"
+                                                                style="transition: all 600ms ease 0s; opacity: 1;">
+                                                                <p><span class="error"></span></p>
+                                                                <div id="awesome-weather-london"
+                                                                    class="awesome-weather-wrap awecf awe_wide temp3 awe_with_stats awe-code-500 awe-desc-light-rain"
+                                                                    style=" color: #ffffff; ">
+                                                                    <div class="awesome-weather-header">
+                                                                    </div>
+                                                                    <div class="awesome-weather-current-temp"><strong
+                                                                            id="temp"></strong></div>
+                                                                    <!-- /.awesome-weather-current-temp -->
+                                                                    <div class="awesome-weather-todays-stats">
+                                                                        <div class="awe_desc" id="weather"></div>
+                                                                        <div class="awe_humidty" id="humidity"style="font-size: 45px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
+                                                                        </div>
+                                                                        <div class="awe_wind" id="windMPH" style="font-size: 45px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
+                                                                        </div>
+                                                                        <div class="awe_highlow" id="highlow"style="font-size: 45px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
+                                                                        </div>
+                                                                    </div><!-- /.awesome-weather-todays-stats -->
+                                                                    <div><img src="" id="img"
+                                                                            style="transform: scale(2);margin-left:70px;">
+                                                                    </div>
+                                                                    <div
+                                                                        class="awesome-weather-forecast awe_days_1 awecf">
+                                                                        <div class="awesome-weather-forecast-day">
+                                                                            <div
+                                                                                class="awesome-weather-forecast-day-temp">
+                                                                                9<sup>°</sup></div>
+                                                                            <div
+                                                                                class="awesome-weather-forecast-day-abbr">
+                                                                                Tue</div>
+                                                                        </div>
+                                                                    </div><!-- /.awesome-weather-forecast -->
+                                                                    <div class="awesome-weather-attribution">Weather
+                                                                        from OpenWeatherMap</div>
+                                                                </div> <!-- /.awesome-weather-wrap -->
+                                                                <p></p>
+                                                            </section>
+                                                            <section class="lazy-load-box effect-slidefromleft"
+                                                                data-delay="200" data-speed="600"
+                                                                style="transition: all 600ms ease 0s; opacity: 1;">
+                                                                <p><span class="error"></span></p>
+                                                                <div id="awesome-weather-london"
+                                                                    class="awesome-weather-wrap awecf awe_wide temp3 awe_without_stats awe-code-500 awe-desc-light-rain"
+                                                                    style=" color: #ffffff; ">
+                                                                    <div class="awesome-weather-header"></div>
+                                                                    <div class="awesome-weather-forecast-day-abbr"
+                                                                        id="day"
+                                                                        style="font-size: 35px;font-family: initial;">
+                                                                    </div>
+                                                                    <div class="awesome-weather-current-temp">
+                                                                        <strong></strong></div>
+                                                                    <!-- /.awesome-weather-current-temp -->
+                                                                    <div class="awesome-weather-forecast awe_days_6 awecf"
+                                                                        id="fullday">
+                                                                    </div><!-- /.awesome-weather-forecast -->
+                                                                    <div class="awesome-weather-attribution">Weather
+                                                                        from OpenWeatherMap</div>
+                                                                </div> <!-- /.awesome-weather-wrap -->
+                                                                <p></p>
+                                                            </section>
+                                                        </div>
+                                                    </div> <!-- .row (end) -->
+                                                </div>
+                                                <div data-speed="3" class="parallax-bg"
+                                                    style="background: url(&quot;https://livedemo00.template-help.com/wordpress_50114/wp-content/uploads/2014/06/home-paralax.jpg&quot;) center -484px no-repeat; left: 50%; margin-left: -960px; width: 1920px;">
+                                                </div>
+                                            </section>
+                                        </div>
+
+                                    </div><!-- .row (end) -->
+                                    <div class="clear"></div>
+                                    <!--.pagination-->
+                                </div>
+                                <!--post-->
+                            </div>
+                            <div class="span4 home-sidebar" data-motopress-type="dynamic-sidebar"
+                                data-motopress-sidebar-id="home-sidebar">
+                                <div id="search-3" class="visible-all-devices without-padding-bg ">
+                                    <div class="search-form">
+                                        <form id="searchform" accept-charset="utf-8">
+                                            <input type="text" value="" name="s" id="s" placeholder="Your Place"
+                                                class="search-form_it" autocomplete="off">
+                                            <span class="input-btn btn btn-from-center-in-sides"><span><span
+                                                        class="input-btn btn btn-from-center-in-sides"><span><span
+                                                                class="input-btn btn btn-from-center-in-sides"><span><input
+                                                                        value="search" id="search-submit"
+                                                                        class="search-form_is"></span></span></span></span></span></span>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div id="text-2" class="visible-all-devices without-padding-bg add-location ">
+                                    <div class="textwidget"><a href="javascript:void(0)">
+                                            <div class="title-box clearfix "><span class="title-box_icon"><img
+                                                        src="https://livedemo00.template-help.com/wordpress_50114/wp-content/themes/theme50114/images/plus.png"
+                                                        alt=""></span>
+                                                <h2 class="title-box_primary">Select to show detail</h2>
+                                                <h3 class="title-box_secondary">Do you like my app ?</h3>
+                                            </div><!-- //.title-box -->
+                                        </a>
+                                        <div class="list styled custom-list">
+                                            <ul>
+                                                <li id="3"><a title="Mauris posuere" href="javascript:void(0)">Home</a></li>
+                                                <li id="1"><a title="Mauris posuere" href="javascript:void(0)">today</a></li>
+                                                <li id="2"><a title="Donec tempor libero" href="javascript:void(0)">Tomorrow</a></li>
+                                                <li id="4"><a title="Vivamus vel sem at" href="javascript:void(0)">Weekend</a></li>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <h5><a title="Phasellus fringilla" href="javascript:void(0)"><img
+                                                    class="alignnone size-full wp-image-1956"
+                                                    src="https://livedemo00.template-help.com/wordpress_50114/wp-content/uploads/2014/06/settings.png"
+                                                    alt="settings" width="30" height="27"> Manage Forecasts </a></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--End #motopress-main-->
+    </div>
+    <div id="back-top-wrapper" class="visible-desktop">
+        <p id="back-top" style="display: block;">
+            <a href="#top"><span></span></a> </p>
+    </div>
+
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?type=cities&key=AIzaSyA3XfuMJJGzaU8TUItQM7XWD4esZdbpgtA&libraries=places"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function ($) {
+        $.ajax({
+            url: "https://weather.api.here.com/weather/1.0/report.json?app_id=DmexY2dhSnrY2ohVD1xZ&app_code=UqgI5VZpdyOrt-CekZlykg&&product=forecast_7days_simple&latitude=10.746903&longitude=106.67629199999999"
+        })
+            .done(function (json) {
+                loaddata(json);
+            });
+    });
+    function loaddata(json) {
+        var parent = json.dailyForecasts.forecastLocation;
+        var temp = parent.forecast[6];
+        $('.awesome-weather-current-temp').html(temp.comfort + '<sup> &deg</sup>');
+        $('#weather').html(temp.skyDescription);
+        $('#windMPH').html('wind: ' + temp.windSpeed + 'KmH');
+        $('#humidity').html('humidity: ' + temp.humidity + '%');
+        $('#highlow').html('H ' + temp.highTemperature + ' • L ' + temp.lowTemperature);
+        $('.awesome-weather-header').html(parent.state);
+        $('#day').html(temp.weekday);
+        $('#img').attr("src", temp.iconLink);
+        var add = '';
+        for (i = 0; i < 6; i++) {
+            add += '<div class="awesome-weather-forecast-day">' + '<div class="awesome-weather-forecast-day-temp">' + parent.forecast[i].comfort + '<sup>°</sup></div><div class="awesome-weather-forecast-day-abbr">' + parent.forecast[i].weekday + '</div><div class="image"><image src=' + parent.forecast[i].iconLink + '></div></div>'
+        }
+        $('#fullday').html(add);
+    }
+    function init() {
+        var input = document.getElementById('s');
+        var autocomplete = new google.maps.places.Autocomplete(input);
+        google.maps.event.addListener(autocomplete, 'place_changed', function () {
+            var place = autocomplete.getPlace();
+            var lat = place.geometry.location.lat();
+            var lng = place.geometry.location.lng();
+            $.ajax({
+                url: "https://weather.api.here.com/weather/1.0/report.json?app_id=DmexY2dhSnrY2ohVD1xZ&app_code=UqgI5VZpdyOrt-CekZlykg&&product=forecast_7days_simple&latitude=" + lat + "&longitude=" + lng
+            })
+                .done(function (json) {
+                    loaddata(json);
+                    $("section.lazy-load-box.effect-slidefromleft:nth-child(2)").show();
+                });
+        })
+
+    };
+    google.maps.event.addDomListener(window, 'load', init);
+</script>
+
+<script type="text/javascript">
+    $("li#1").click(function()
+    {
+        loaddata1(6);
+    });
+    $("li#2").click(function()
+    {
+        loaddata1(1);
+    });
+    $("li#3").click(function()
+    {
+        location.reload();
+    });
+    $('input#s:text').focus(
+        function(){
+            $(this).val('');
+    });
+    $("li#4").click(function()
+    {
+        $.ajax({
+            url: "https://weather.api.here.com/weather/1.0/report.json?app_id=DmexY2dhSnrY2ohVD1xZ&app_code=UqgI5VZpdyOrt-CekZlykg&&product=forecast_7days_simple&latitude=10.746903&longitude=106.67629199999999"
+        })
+            .done(function (json) {
+                for(i=0; i<=6; i++){
+                    if(json.dailyForecasts.forecastLocation.forecast[i].weekday == "Sunday"){
+                        loaddata2(json, i);
+                    }
+                }
+                
+        });
+        loaddata1(1);
+    });
+     function loaddata2(json, int) {
+        var parent = json.dailyForecasts.forecastLocation;
+        var temp = parent.forecast[int];
+        $('.awesome-weather-current-temp').html(temp.comfort + '<sup> &deg</sup>');
+        $('#weather').html(temp.skyDescription);
+        $('#windMPH').html('wind: ' + temp.windSpeed + 'KmH');
+        $('#humidity').html('humidity: ' + temp.humidity + '%');
+        $('#highlow').html('H ' + temp.highTemperature + ' • L ' + temp.lowTemperature);
+        $("section.lazy-load-box.effect-slidefromleft:nth-child(2)").hide();
+        $('#highlow').html('lowture: '+temp.lowTemperature +'</break>'+' windSpeed: '+temp.windSpeed +'</break> dewPoint: '+temp.dewPoint+'</break> comfort: '+ temp.comfort+'</break> windD: '+ temp.windDesc);
+    };
+    function loaddata1(int) {
+        $.ajax({
+            url: "https://weather.api.here.com/weather/1.0/report.json?app_id=DmexY2dhSnrY2ohVD1xZ&app_code=UqgI5VZpdyOrt-CekZlykg&&product=forecast_7days_simple&latitude=10.746903&longitude=106.67629199999999"
+        })
+            .done(function (json) {
+                loaddata2(json, int);
+        });
+        };
+</script>
+
+</html>
